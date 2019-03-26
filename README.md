@@ -1,2 +1,2 @@
-# availability-_module
+# availability_module
 Airbnb availability module
