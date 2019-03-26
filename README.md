@@ -2,7 +2,10 @@
 related_listings_module
 
 #Related Projects
-https://github.com/teamName/repo
+https://github.com/hrsf113-group-2/reviews_module
+https://github.com/hrsf113-group-2/photos_module
+https://github.com/hrsf113-group-2/checkout_module
+https://github.com/hrsf113-group-2/header_module
 
 #Table of Contents
 Usage
