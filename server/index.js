@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const db = require('../database/index.js');
 
 let app = express();
 
@@ -12,7 +13,16 @@ app.use(express.static(__dirname + '/../dist/'));
 
 
 app.get('/relatedlisting', (req, res) => {
-  res.send('this works');
+  console.log('GET Invoked')
+  db.getListing((error, listing) => {
+    if (error) {
+      console.log(error);
+    } else {
+      // res.end(JSON.stringify(listing));
+      res.end(JSON.stringify(listing));
+    }
+  })
+  // res.end('Good Job');
 })
 
 
