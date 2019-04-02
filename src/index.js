@@ -1,7 +1,6 @@
-import _ from 'underscore';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './Components/App.jsx';
+import App from './Components/App';
 
 // const title = 'My Minimal React Webpack Babel Setup';
 

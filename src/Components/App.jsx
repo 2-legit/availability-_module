@@ -35,11 +35,4 @@ class App extends React.Component {
   }
 }
 
-// const title = 'Hey Bud'
-
-// const App = () => {
-//   return <div>{title}</div>
-// }
-
-
 export default App;
