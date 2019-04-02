@@ -4,7 +4,8 @@
   "description": "related_listings_module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle-test": "webpack --config webpack.test.config.js",
+    "test-client": "jest ./__test__/compiled.test.js --coverage",
     "database-dev": "nodemon database/index.js",
     "server-dev": "nodemon server/index.js",
     "build": "webpack -d --watch",
@@ -25,18 +26,25 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "jest": "^24.6.0",
+    "react-addons-test-utils": "^15.6.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
+    "babel-jest": "^24.6.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "faker": "^4.1.0",
+    "jest-enzyme": "^7.0.2",
     "jquery": "^3.3.1",
     "mongoose": "^5.4.20",
     "morgan": "^1.9.1",
@@ -44,5 +52,10 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "underscore": "^1.9.1"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./node_modules/jest-enzyme/lib/index.js"
+    ]
   }
 }
