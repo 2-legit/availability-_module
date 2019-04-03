@@ -7,20 +7,20 @@ class Listing extends React.Component {
   }
 
   render() {
-    const renderedListing = (props) => {
-      return (
-      <div>
-        <div>{props.Location}</div>
-      </div>
-      )
-    }
     if (this.props.data.length) {
       return this.props.data.map((listing) => { 
         return (
-        <div>
-          <div>{listing.location}</div>
-          <img src={listing.imageUrl} height="25%" width="25%"></img>
-        </div>
+          <div>
+            <img src={listing.imageUrl} alt ="" height="25%" width="25%"></img>
+            <div>
+              <span>{listing.typeOfRoom}</span>
+              <span> &#8226; </span>
+              <span>{listing.location}</span>
+            </div>
+            <div>{listing.listingTitle}</div>
+            <div>${listing.price} per night</div>
+            <div>{listing.rating} stars</div>
+          </div>
         )
       })
     }

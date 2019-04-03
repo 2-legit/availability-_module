@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import Listing from './Listing.jsx';
+import Listing from './Listing';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,7 +32,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div>Hello World</div>
         <Listing data={ this.state.data }/>
       </div>
     )
