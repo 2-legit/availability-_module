@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './__test__/client.test.js',
+  entry: './__tests__/client.test.js',
   module: {
     rules: [
       {
@@ -20,7 +20,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    filename: 'compiled.js',
-    path: path.resolve(__dirname, '__test__'),
+    filename: 'compiled.test.js',
+    path: path.resolve(__dirname, '__tests__'),
   },
 };

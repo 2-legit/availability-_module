@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bundle-test": "webpack --config webpack.test.config.js",
-    "test-client": "jest ./__test__/compiled.test.js --coverage",
+    "test-client": "jest ./__tests__/compiled.test.js --coverage",
     "database-dev": "nodemon database/index.js",
     "server-dev": "nodemon server/index.js",
     "build": "webpack -d --watch",
