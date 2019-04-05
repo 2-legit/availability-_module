@@ -1,4 +1,7 @@
 import React from 'react';
+import styles from './styles.css';
+
+console.log(styles);
 
 class Listing extends React.Component {
   constructor(props) {
@@ -14,7 +17,7 @@ class Listing extends React.Component {
           <div>
             <img src={listing.imageUrl} alt ="" height="25%" width="25%" />
             <div>
-              <span>{listing.typeOfRoom}</span>
+              <span className={ styles.roomType }>{listing.typeOfRoom}</span>
               <span> &#8226; </span>
               <span>{listing.location}</span>
             </div>
@@ -28,5 +31,6 @@ class Listing extends React.Component {
     return <div>No Data</div>
   }
 }
+//  <span className={styles.roomType}>{listing.typeOfRoom}</span>
 
 export default Listing;
