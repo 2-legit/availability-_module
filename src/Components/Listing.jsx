@@ -4,15 +4,17 @@ import styles from './styles.css';
 class Listing extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
-  }
+    this.state = {
+      
+    }
+  };
 
   render() {
     const { data } = this.props;
     if (data) {
       return data.map((listing) => { 
         return (
-          <div key={listing.roomId}>
+          <div key={listing.roomId} className="listing">
             <img src={listing.imageUrl} alt ="" height="25%" width="25%" />
             <div className="roomType">
               <span>{listing.typeOfRoom}</span>

@@ -16,3 +16,31 @@
 .rating {
   font-size: 12px;
 }
+img {
+  height:250px; 
+  width: 400px;
+}
+.listing {
+  height: 300px;
+  width: 400px;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+.allListings {
+  background-color: beige;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border: rgb(31, 25, 25);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 300px;
+
+}
+.title {
+  font-weight: bolder;
+  font-family: Verdana;
+  font-size: larger;
+}
