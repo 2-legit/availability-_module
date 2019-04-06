@@ -9,7 +9,7 @@ class Listing extends React.Component {
 
   render() {
     const { data } = this.props;
-    if (data.length) {
+    if (data) {
       return data.map((listing) => { 
         return (
           <div key={listing.roomId}>
