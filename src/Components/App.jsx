@@ -6,21 +6,20 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      data: ''
+      data: '',
     }
-  }
+  };
 
   componentDidMount() {
-    const setState = (value) => {
-      this.setState({data: value});
+    const setStateOfDataKey = (value) => {
+      this.setState({ data: value });
     }
-    console.log('Component Mounted');
     $.ajax({
       method: 'GET',
       url: 'http://localhost:3000/relatedlisting',
       contentType: 'application/json',
       success: (data) => {
-        setState(data);
+        setStateOfDataKey(data);
       },
       error: (error) => {
         console.log(error)
