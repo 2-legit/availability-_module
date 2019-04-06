@@ -29,9 +29,10 @@ class App extends React.Component {
   }
 
   render() {
+    const { data } = this.state;
     return (
       <div>
-        <Listing data={ this.state.data }/>
+        <Listing data={ data }/>
       </div>
     )
   }
