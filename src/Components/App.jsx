@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import Listing from './Listing';
+import AllListings from './AllListings';
 import styles from './styles.css';
 
 class App extends React.Component {
@@ -35,7 +35,7 @@ class App extends React.Component {
       <div>
         <div className="title">More Homes You May Like</div>
         <div className="allListings">
-          <Listing data={ data }/>
+          <AllListings data={ data }/>
         </div>
       </div>
 

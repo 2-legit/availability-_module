@@ -10,25 +10,20 @@ class Listing extends React.Component {
   };
 
   render() {
-    const { data } = this.props;
-    if (data) {
-      return data.map((listing) => { 
-        return (
-          <div key={listing.roomId} className="listing">
-            <img src={listing.imageUrl} alt ="" height="25%" width="25%" />
-            <div className="roomType">
-              <span>{listing.typeOfRoom}</span>
-              <span> &#8226; </span>
-              <span>{listing.location}</span>
-            </div>
-            <div className="roomDescription">{listing.listingTitle}</div>
-            <div className="price">${listing.price} per night</div>
-            <div className="rating">{listing.rating} stars</div>
-          </div>
-        )
-      })
-    }
-    return <div>No Data</div>
+    const { listing } = this.props; 
+    return (
+      <div key={listing.roomId} className="listing">
+        <img src={listing.imageUrl} alt ="" height="25%" width="25%" />
+        <div className="roomType">
+          <span>{listing.typeOfRoom}</span>
+          <span> &#8226; </span>
+          <span>{listing.location}</span>
+        </div>
+        <div className="roomDescription">{listing.listingTitle}</div>
+        <div className="price">${listing.price} per night</div>
+        <div className="rating">{listing.rating} stars</div>
+      </div>
+    )
   }
 }
 
