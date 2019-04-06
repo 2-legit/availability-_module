@@ -1,10 +1,18 @@
-
 .roomType {
-  /* color: rgb(68, 26, 5); */
-  font-style: italic;
-  font-size: 20px;
-
+  color: rgb(62, 56, 78);
+  font-family: Arial;
+  font-size: 12px;
 }
-div {
-  background-color: cadetblue;
+.roomDescription {
+  color: rgb(31, 25, 25);
+  font-family: Cambria;
+  font-size: 16px;
+  font-weight: bold;
+}
+.price {
+  font-size: 14px;
+  font-family: Arial;
+}
+.rating {
+  font-size: 12px;
 }

@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './styles.css';
 
-console.log(styles);
-
 class Listing extends React.Component {
   constructor(props) {
     super(props);
@@ -14,16 +12,16 @@ class Listing extends React.Component {
     if (data.length) {
       return data.map((listing) => { 
         return (
-          <div>
+          <div key={listing.roomId}>
             <img src={listing.imageUrl} alt ="" height="25%" width="25%" />
-            <div>
-              <span className={ styles.roomType }>{listing.typeOfRoom}</span>
+            <div className="roomType">
+              <span>{listing.typeOfRoom}</span>
               <span> &#8226; </span>
               <span>{listing.location}</span>
             </div>
-            <div>{listing.listingTitle}</div>
-            <div>${listing.price} per night</div>
-            <div>{listing.rating} stars</div>
+            <div className="roomDescription">{listing.listingTitle}</div>
+            <div className="price">${listing.price} per night</div>
+            <div className="rating">{listing.rating} stars</div>
           </div>
         )
       })
@@ -31,6 +29,5 @@ class Listing extends React.Component {
     return <div>No Data</div>
   }
 }
-//  <span className={styles.roomType}>{listing.typeOfRoom}</span>
 
 export default Listing;
