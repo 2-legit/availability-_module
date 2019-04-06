@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import Listing from './Listing';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,17 +20,19 @@ class App extends React.Component {
       url: 'http://localhost:3000/relatedlisting',
       contentType: 'application/json',
       success: (data) => {
-        setStateOfDataKey(data);
+        setStateOfDataKey(JSON.parse(data));
       },
       error: (error) => {
-        console.log(error)
-      }
+        console.log(error);
+      },
     })
   }
 
   render() {
     return (
-      <div>Hello World</div>
+      <div>
+        <Listing data={ this.state.data }/>
+      </div>
     )
   }
 }

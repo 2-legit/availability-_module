@@ -2,6 +2,10 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
   module: {
     rules: [
       {
@@ -14,13 +18,21 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/,
+        loader: "style-loader"
+      },
+      {
+        test: /\.css$/,
+        loader: "css-loader",
+        options: {
+          modules: true,
+          localIdentName: "[name]__[local]___[hash:base64:5]"
+        }
+      }
     ],
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
   },
 };
