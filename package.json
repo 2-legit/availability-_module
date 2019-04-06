@@ -4,8 +4,7 @@
   "description": "related_listings_module",
   "main": "index.js",
   "scripts": {
-    "bundle-test": "webpack --config webpack.test.config.js",
-    "test-client": "jest ./__test__/compiled.test.js --coverage",
+    "test-client": "jest ./__tests__/client.test.js --coverage",
     "database-dev": "nodemon database/index.js",
     "server-dev": "nodemon server/index.js",
     "build": "webpack -d --watch",
@@ -26,6 +25,7 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "enzyme-to-json": "^3.3.5",
@@ -34,10 +34,13 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "extract-text-webpack-plugin": "^3.0.2",
     "jest": "^24.6.0",
     "react-addons-test-utils": "^15.6.2",
+    "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.0",
+    "webpack-combine-loaders": "^2.0.4"
   },
   "dependencies": {
     "babel-jest": "^24.6.0",
@@ -56,6 +59,12 @@
   "jest": {
     "setupFilesAfterEnv": [
       "./node_modules/jest-enzyme/lib/index.js"
+    ],
+    "setupFiles": [
+      "<rootDir>/enzyme.config.js"
+    ],
+    "testPathIgnorePatterns": [
+      "\\\\node_modules\\\\"
     ]
   }
 }

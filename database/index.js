@@ -25,6 +25,7 @@ const Listing = mongoose.model('Listing', listingSchema);
 
 const getListing = (callback) => {
   Listing.find()
+    .limit(9)
     .exec((error, listing) => {
       if (error) {
         callback(error);
