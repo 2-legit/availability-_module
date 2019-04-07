@@ -6,19 +6,23 @@ class AllListings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {}
+    this.scroller = React.createRef();
   }
 
   render() {
     const { data } = this.props;
     if (data) {
-      return data.map((listing) => {
-        return <Listing listing={listing} />
-      })
+      return (
+        <div className="allListings" ref="scroller">
+          <button id="leftScroll" onClick={(e)=>{this.refs.scroller.scrollLeft -= 410}}>{"<"}</button>
+          {data.map((listing) => {
+            return <Listing key={listing.roomId} listing={listing} />
+          })}
+          <button id="rightScroll" onClick={(e)=>{this.refs.scroller.scrollLeft += 410}}>{">"}</button>
+        </div>
+      )
     }
     return <div> Loading.....   (probably)</div>
-    // return (
-    //   <div>All Listings in One Component</div>
-    // )
   }
 }
 

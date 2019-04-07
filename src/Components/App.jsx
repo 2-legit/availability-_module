@@ -34,9 +34,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="title">More Homes You May Like</div>
-        <div className="allListings">
-          <AllListings data={ data }/>
-        </div>
+        <AllListings data={ data }/>
       </div>
 
     )
