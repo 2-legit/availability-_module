@@ -46,17 +46,23 @@ img {
   font-family: Verdana;
   font-size: larger;
 }
+.star {
+  color: rgb(0, 132, 137);
+}
  #leftScroll {
+  border-style: none;
   width: 20px;
   position: fixed;
   height: 350px;
   text-align: center;
   font-size: 20px;
   font-weight: 1000;
+  text-decoration-color: rgb(118, 118, 118);
   background: transparent;
 }
 
 #rightScroll {
+  border-style: none;
   width: 20px;
   position: fixed;
   font-size: 20px;

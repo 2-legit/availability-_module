@@ -1,4 +1,5 @@
 import React from 'react';
+import Rating from './Rating';
 import styles from './styles.css';
 
 class Listing extends React.Component {
@@ -21,7 +22,8 @@ class Listing extends React.Component {
         </div>
         <div className="roomDescription">{listing.listingTitle}</div>
         <div className="price">${listing.price} per night</div>
-        <div className="rating">{listing.rating} stars</div>
+        {/* <div className="rating">{listing.rating} stars</div> */}
+        <Rating rating={listing.rating}/>
       </div>
     )
   }
