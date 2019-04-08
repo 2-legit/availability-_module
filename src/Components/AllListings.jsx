@@ -6,18 +6,25 @@ class AllListings extends React.Component {
   constructor(props) {
     super(props);
     this.scroller = React.createRef();
+    this.state = {
+      scrollPosition: 0,
+    }
   }
 
   render() {
     const { data } = this.props;
-    if (data) {
+
+    if (data) {   
       return (
         <div className="allListings" ref="scroller">
-          <button type="button" id="leftScroll" onClick={(e)=>{ this.refs.scroller.scrollLeft -= 400; }}>{'<'}</button>
+        {
+          this.state.scrollPosition > 150 && 
+          <button type="button" id="leftScroll" onClick={(e)=>{this.setState({scrollPosition:  this.state.scrollPosition - 400}, () => this.refs.scroller.scrollLeft -= 400 ); }}>{'<'}</button>
+        }
           {data.map((listing) => {
             return <Listing key={listing.roomId} listing={listing} />
           })}
-          <button type="button" id="rightScroll" onClick={(e)=>{ this.refs.scroller.scrollLeft += 400; }}>{'>'}</button>
+          <button type="button" id="rightScroll" onClick={(e)=>{this.setState({ scrollPosition:  this.state.scrollPosition + 400}, () => this.refs.scroller.scrollLeft += 400 )}}>{'>'}</button>
         </div>
       )
     }
