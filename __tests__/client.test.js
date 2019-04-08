@@ -1,17 +1,19 @@
 import Enzyme from 'enzyme';
 import React from 'react';
-import Adapter from 'enzyme-adapter-react-16';
 import App from '../src/Components/App';
-
-Enzyme.configure({ adapter: new Adapter() });
+import Listing from '../src/Components/Listing';
 
 test('should have access to DOM', () => {
   expect(typeof document).toBe('object');
 });
 
-describe('<App /> ', () => {
+describe(' Component functionality ', () => {
   it('expects App component to exist', () => {
     const wrapper = Enzyme.shallow(<App />);
     expect(wrapper.exists()).toBe(true)
   })
+  it('expects Listing component to exists', () => {
+    const wrapper = Enzyme.shallow(<Listing />);
+    expect(wrapper.exists()).toBe(true);
+  });
 })
