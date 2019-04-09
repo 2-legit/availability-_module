@@ -61,6 +61,7 @@ img {
   color: slategrey;
   background: transparent;
   -webkit-transform:scale(1,2);
+  z-index: 1;
 }
 
 #rightScroll {
@@ -75,4 +76,69 @@ img {
   right: 0px;
   background: transparent;
   -webkit-transform:scale(1,2);
+  z-index: 1;
+}
+#heart {
+  width: 50px;
+  height: 45px;
+  margin-top: 5px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#heart::before, #heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 26px;
+  height: 40px;
+  border-radius: 25px 25px 0 0;
+  background: red;
+}
+
+#heart::before {
+  left: 25px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+#heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+#emptyHeart {
+  width: 50px;
+  height: 45px;
+  margin-top: 5px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#emptyHeart::before, #emptyHeart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 26px;
+  height: 40px;
+  border-radius: 25px 25px 0 0;
+  background: transparent;
+  border-style: solid;
+}
+
+#emptyHeart::before {
+  left: 15px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+#emptyHeart::after {
+  right: 35px;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+.container {
+  position: relative;
 }
