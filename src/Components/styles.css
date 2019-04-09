@@ -48,7 +48,7 @@ img {
 .star {
   color: rgb(0, 132, 137);
 }
- #leftScroll {
+ .leftScroll {
   align-self: center;
   border-style: none;
   width: 20px;
@@ -63,7 +63,7 @@ img {
   z-index: 1;
 }
 
-#rightScroll {
+.rightScroll {
   align-self: center;
   border-style: none;
   color: slategrey;
@@ -77,7 +77,7 @@ img {
   -webkit-transform: scale(1,2);
   z-index: 1;
 }
-#heart {
+.heart {
   width: 50px;
   height: 45px;
   margin-top: 5px;
@@ -86,7 +86,7 @@ img {
   right: 0px;
 }
 
-#heart::before, #heart::after {
+.heart::before, .heart::after {
   content: "";
   position: absolute;
   top: 0;
@@ -96,18 +96,18 @@ img {
   background: red;
 }
 
-#heart::before {
+.heart::before {
   left: 25px;
   transform: rotate(-45deg);
   transform-origin: 0 100%;
 }
 
-#heart::after {
+.heart::after {
   left: 0;
   transform: rotate(45deg);
   transform-origin: 100% 100%;
 }
-#emptyHeart {
+.emptyHeart {
   width: 50px;
   height: 45px;
   margin-top: 5px;
@@ -116,7 +116,7 @@ img {
   right: 0px;
 }
 
-#emptyHeart::before, #emptyHeart::after {
+.emptyHeart::before, .emptyHeart::after {
   content: "";
   position: absolute;
   top: 0;
@@ -127,17 +127,20 @@ img {
   border-style: solid;
 }
 
-#emptyHeart::before {
+.emptyHeart::before {
   left: 15px;
   transform: rotate(-45deg);
   transform-origin: 0 100%;
 }
 
-#emptyHeart::after {
+.emptyHeart::after {
   right: 35px;
   transform: rotate(45deg);
   transform-origin: 100% 100%;
 }
 .container {
   position: relative;
+}
+.test {
+  color: blueviolet;
 }

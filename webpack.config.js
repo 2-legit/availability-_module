@@ -1,11 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
   module: {
     rules: [
       {
@@ -20,9 +15,25 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: ["style-loader", "css-loader"],
+        use: {
+          loader: "style-loader",
+        }
+      },
+      {
+        test: /\.css$/,
+        use: { // I don't know what this does
+          loader: "css-loader",
+          options: {
+            modules: true,
+          }
+        }
       },
     ],
+  },
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],

@@ -36,10 +36,10 @@ class AllListings extends React.Component {
 
     if (data) {   
       return (
-        <div className="allListings" ref="scroller">
+        <div className={styles.allListings} ref="scroller">
           {
             scrollPosition > 25 && 
-            <button type="button" id="leftScroll" onClick={ this.leftArrow }>{'<'}</button>
+            <button type="button" className={styles.leftScroll} onClick={ this.leftArrow }>{'<'}</button>
           }
           { 
             data.map((listing) => {
@@ -48,7 +48,7 @@ class AllListings extends React.Component {
           }
           {
            scrollPosition < maxScroll - 25 && 
-           <button type="button" id="rightScroll" onClick={ this.rightArrow }>{'>'}</button>
+           <button type="button" className={styles.rightScroll} onClick={ this.rightArrow }>{'>'}</button>
           }
         </div>
       )

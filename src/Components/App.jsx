@@ -3,6 +3,7 @@ import $ from 'jquery';
 import AllListings from './AllListings';
 import styles from './styles.css';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +34,7 @@ class App extends React.Component {
     const { data } = this.state;
     return (
       <div>
-        <div className="title">More Homes You May Like</div>
+        <div className={styles.title}>More Homes You May Like</div>
         <AllListings data={ data }/>
       </div>
     )
