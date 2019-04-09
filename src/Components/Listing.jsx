@@ -6,7 +6,7 @@ class Listing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      isLiked: false,
     }
   };
 
@@ -14,7 +14,11 @@ class Listing extends React.Component {
     const { listing } = this.props; 
     return (
       <div key={listing.roomId} className="listing">
-        <img src={listing.imageUrl} alt ="" height="25%" width="25%" />
+        <div className="container">
+          <img onClick={() => this.setState({ isLiked: !this.state.isLiked })} src={listing.imageUrl} alt ="" height="25%"   width="25%" />
+          { this.state.isLiked && <div id="heart" /> }
+          { !this.state.isLiked && <div id="emptyHeart" />}
+        </div>
         <div className="roomType">
           <span>{listing.typeOfRoom}</span>
           <span> &#8226; </span>
