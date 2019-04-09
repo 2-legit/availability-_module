@@ -36,7 +36,6 @@ class App extends React.Component {
         <div className="title">More Homes You May Like</div>
         <AllListings data={ data }/>
       </div>
-
     )
   }
 }

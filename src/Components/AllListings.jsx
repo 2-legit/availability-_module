@@ -8,23 +8,29 @@ class AllListings extends React.Component {
     this.scroller = React.createRef();
     this.state = {
       scrollPosition: 0,
+      maxScroll: Infinity,
     }
   }
 
   render() {
     const { data } = this.props;
+    const { scrollPosition } = this.state;
+    const { maxScroll } = this.state;
 
     if (data) {   
       return (
         <div className="allListings" ref="scroller">
-        {
-          this.state.scrollPosition > 150 && 
-          <button type="button" id="leftScroll" onClick={(e)=>{this.setState({scrollPosition:  this.state.scrollPosition - 400}, () => this.refs.scroller.scrollLeft -= 400 ); }}>{'<'}</button>
-        }
+          {
+            scrollPosition > 25 && 
+            <button type="button" id="leftScroll" onClick={(e)=>{this.setState({scrollPosition: scrollPosition - 400, maxScroll: this.refs.scroller.scrollWidth - this.refs.scroller.clientWidth }, () => {this.refs.scroller.scrollLeft -= 400 }); }}>{'<'}</button>
+          }
           {data.map((listing) => {
             return <Listing key={listing.roomId} listing={listing} />
           })}
-          <button type="button" id="rightScroll" onClick={(e)=>{this.setState({ scrollPosition:  this.state.scrollPosition + 400}, () => this.refs.scroller.scrollLeft += 400 )}}>{'>'}</button>
+          {
+           scrollPosition < maxScroll - 25 && 
+           <button type="button" id="rightScroll" onClick={(e)=>{ this.setState({ scrollPosition: scrollPosition + 400, maxScroll: this.refs.scroller.scrollWidth - this.refs.scroller.clientWidth }, () => {this.refs.scroller.scrollLeft += 400 })}}>{'>'}</button>
+          }
         </div>
       )
     }
