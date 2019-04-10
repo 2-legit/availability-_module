@@ -19,7 +19,7 @@ class App extends React.Component {
     }
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/relatedlisting',
+      url: '/relatedlisting',
       contentType: 'application/json',
       success: (data) => {
         setStateOfDataKey(JSON.parse(data));
