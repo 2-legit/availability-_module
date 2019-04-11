@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/relatedlisting', (req, res) => {
+app.get('/rooms/:roomid/relatedlisting', (req, res) => {
   console.log('GET Invoked');
   db.getListing((error, listing) => {
     if (error) {

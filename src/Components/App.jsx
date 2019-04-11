@@ -17,9 +17,12 @@ class App extends React.Component {
     const setStateOfDataKey = (value) => {
       this.setState({ data: value });
     }
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min))) + Math.ceil(min);
+    }
     $.ajax({
       method: 'GET',
-      url: '/relatedlisting',
+      url: `/rooms/${getRandomInt(1, 99)}/relatedlisting`,
       contentType: 'application/json',
       success: (data) => {
         setStateOfDataKey(JSON.parse(data));
