@@ -6,10 +6,9 @@
   "scripts": {
     "test-client": "jest ./__tests__/client.test.js --coverage",
     "database-dev": "nodemon database/index.js",
-    "server-dev": "nodemon server/index.js",
+    "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
-    "seed": "node database/seed.js",
-    "start": "./.ebextensions/nodecommand.config",
+    "seed": "node database/seed.js"
   },
   "repository": {
     "type": "git",
