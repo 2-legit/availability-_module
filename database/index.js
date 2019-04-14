@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://52.53.151.125/relatedlisting', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/relatedlisting', { useNewUrlParser: true }, (error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("success!")
+  }
+});
 
 const db = mongoose.connection;
 
